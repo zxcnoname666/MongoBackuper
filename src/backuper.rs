@@ -308,8 +308,8 @@ fn delete_old_dirs(root_dir_path: &Path, config: &ConfigConnect) {
             if let Some(first) = arr1.first() {
                 let local_arr: Vec<_> = first.trim().split('.').collect();
 
-                if let Some(hrs) = local_arr.first() {
-                    day = hrs.to_string().parse::<u8>().unwrap_or_default();
+                if let Some(min) = local_arr.first() {
+                    year = min.to_string().parse::<i32>().unwrap_or_default();
                 } else {
                     continue;
                 }
@@ -336,8 +336,8 @@ fn delete_old_dirs(root_dir_path: &Path, config: &ConfigConnect) {
                     continue;
                 }
 
-                if let Some(min) = local_arr.last() {
-                    year = min.to_string().parse::<i32>().unwrap_or_default();
+                if let Some(hrs) = local_arr.last() {
+                    day = hrs.to_string().parse::<u8>().unwrap_or_default();
                 } else {
                     continue;
                 }

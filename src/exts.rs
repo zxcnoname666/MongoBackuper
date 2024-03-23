@@ -12,7 +12,7 @@ pub fn get_date() -> String {
 pub fn get_date_file() -> String {
     let date = OffsetDateTime::now_local().unwrap_or(OffsetDateTime::now_utc());
     return format!("{:0width$}.{:0width$}.{:0width$} {:0width$}-{:0width$}",
-        date.day(), date.month() as usize, date.year(), date.hour(), date.minute(),
+        date.year(), date.month() as usize, date.day(), date.hour(), date.minute(),
         width = 2);
 }
 
